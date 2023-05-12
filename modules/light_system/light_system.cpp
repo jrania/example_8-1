@@ -33,9 +33,17 @@ void lightSystemUpdate()
 {
     dutyCycle = lightLevelControlRead();
 
+    /**
     setDutyCycle( RGB_LED_RED, dutyCycle );
     setDutyCycle( RGB_LED_GREEN, dutyCycle );
     setDutyCycle( RGB_LED_BLUE, dutyCycle );
+    */ 
+
+    setDutyCycle( RGB_LED_RED, 0.5f );
+    setDutyCycle( RGB_LED_GREEN, 0.35f );
+    setDutyCycle( RGB_LED_BLUE, 0.8f );
+
+    callTickerCallbackBrightControl();
 
 }
 

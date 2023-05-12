@@ -45,6 +45,8 @@ void smartHomeSystemInit()
 
 void smartHomeSystemUpdate()
 {
+    int i = 0;
+
     userInterfaceUpdate();
     fireAlarmUpdate();
     intruderAlarmUpdate();
@@ -52,8 +54,12 @@ void smartHomeSystemUpdate()
     eventLogUpdate();
     pcSerialComUpdate();
     motorControlUpdate();
-    lightSystemUpdate();
-    delay(SYSTEM_TIME_INCREMENT_MS);
+
+    for(i = 0; i < 10; i++)
+    {
+        lightSystemUpdate();
+        delay(SYSTEM_TIME_INCREMENT_MS);
+        }
 }
 
 //=====[Implementations of private functions]==================================

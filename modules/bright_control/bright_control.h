@@ -15,6 +15,7 @@
 
 void brightControlInit();
 void setDutyCycle( lightSystem_t light, float dutyCycle );
+void callTickerCallbackBrightControl();
 
 //=====[#include guards - end]=================================================
 

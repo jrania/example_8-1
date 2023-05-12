@@ -43,8 +43,13 @@ static void tickerCallbackBrightControl( );
 
 void brightControlInit()
 {
-    tickerBrightControl.attach( tickerCallbackBrightControl, 
-                              ( (float) tickRateMSBrightControl) / 1000.0 );
+    /**
+    tickerBrightControl define un timmer.
+    attach define qué función llamará el Timmer cada vez que llegue al final (interrupcion)
+    */
+    
+    /*tickerBrightControl.attach( tickerCallbackBrightControl, 
+                              ( (float) tickRateMSBrightControl) / 1000.0 );*/
 
     setPeriod( RGB_LED_RED, 0.01f );
     setPeriod( RGB_LED_GREEN, 0.01f );
@@ -66,6 +71,11 @@ void setDutyCycle( lightSystem_t light, float dutyCycle )
 static void setPeriod( lightSystem_t light, float period )
 {
     periodSFloat[light] = period;
+}
+
+void callTickerCallbackBrightControl()
+{
+    tickerCallbackBrightControl();
 }
 
 static void tickerCallbackBrightControl( )
